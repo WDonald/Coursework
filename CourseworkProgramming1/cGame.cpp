@@ -256,32 +256,47 @@ bool cGame::getInput(bool theLoop)
 					break;
 				case SDLK_DOWN:
 				{
+					/*
+
 					if (theRocket.getSpritePos().x < (renderWidth - theRocket.getSpritePos().w))
 					{
 						theRocket.setSpriteTranslation({ -5, -5 });
 					}
+					*/
+
 				}
 				break;
 
 				case SDLK_UP:
 				{
+					/*
+
 					if (theRocket.getSpritePos().x > 0)
 					{
 						theRocket.setSpriteTranslation({ 5, 5 });
 					}
+					*/
+
 				}
 				break;
 				case SDLK_RIGHT:
+					//rotate sprite to right and move
 				{
-					theRocket.setSpriteRotAngle(theRocket.getSpriteRotAngle() + 5);
+					theRocket.setSpriteRotAngle(90);
+					theRocket.setSpriteTranslation({ 10, 5 });
 				}
 				break;
 
 				case SDLK_LEFT:
+					//rotate sprite to right and move
 				{
-					theRocket.setSpriteRotAngle(theRocket.getSpriteRotAngle() - 5);
+					theRocket.setSpriteRotAngle(-90);
+					theRocket.setSpriteTranslation({10,5});
+
 				}
 				break;
+				
+				/*
 				case SDLK_SPACE:
 				{
 					theBullets.push_back(new cBullet);
@@ -297,6 +312,7 @@ bool cGame::getInput(bool theLoop)
 				}
 				theSoundMgr->getSnd("shot")->play(0);
 				break;
+				*/
 				default:
 					break;
 				}
